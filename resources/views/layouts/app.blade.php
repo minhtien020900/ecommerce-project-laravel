@@ -21,8 +21,12 @@
 </head>
 <body>
     <div id="app">
+<<<<<<< HEAD
         <app-default/>
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+=======
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+>>>>>>> 264005d721c8c3a34cc404d18b92d305e013c1f2
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -41,7 +45,11 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+<<<<<<< HEAD
                             @if (Route::has('login'))
+=======
+                            @if (Route::currentRouteName()!='login')
+>>>>>>> 264005d721c8c3a34cc404d18b92d305e013c1f2
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -78,8 +86,13 @@
 
         <main class="py-4">
             @yield('content')
+<<<<<<< HEAD
         </main> --}}
     </div>
     <script src="{{mix('js/app.js')}}"></script>
+=======
+        </main>
+    </div>
+>>>>>>> 264005d721c8c3a34cc404d18b92d305e013c1f2
 </body>
 </html>
