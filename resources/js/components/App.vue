@@ -1,15 +1,13 @@
 <template>
-  <div id="app">
-  App 
-  <br>
-  <ExampleComponent></ExampleComponent>
-  </div>
+  
+    <AdminLayout/>
+  
 </template>
 
 <script>
-import ExampleComponent from './ExampleComponent.vue'
+import AdminLayout from './layouts/AdminLayout'
 export default {
-  components: { ExampleComponent },
+  components: { AdminLayout },
 
 }
 </script>
