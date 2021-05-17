@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Product\ProductController as ProductProductController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,16 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin', function () {
     return view('layouts.admin-layout');
 })->name('admin-dashboard');
-// Route::get('/admin/list-product', function () {
-//     return view('pages.product.list-product');
-// })->name('list-product');
+Route::resource('/product',ProductProductController::class);
+Auth::routes();
+// Route::get('admin/list-product')
+
+Route::get('/admin/list-product', function () {
+    return view('pages.product.list-product');
+})->name('list-product');
 // // Route::get('/add-product', [ProductController::class,'create'])->name('add-product');
 // Route::resource('product', ProductController::class);
 // Auth::routes();

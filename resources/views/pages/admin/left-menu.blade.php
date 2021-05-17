@@ -154,7 +154,7 @@
                   >
                 </li>
                 <li>
-                  <a href="buttons.html" class="slide-item"
+                  <a  class="slide-item" href="{{route('product.index')}}"
                     ><i class="sidemenu-icon fe fe-chevrons-right"></i>
                     Danh sách sản phẩm</a
                   >

@@ -32,14 +32,15 @@
     <link href="{{asset('css/sidemenu.css')}}" rel="stylesheet" />
 
     <!--C3 CHARTS CSS -->
-    <link href="{{asset('plugins/charts-c3/c3-chart.css')}}" rel="stylesheet" />
+    <!-- <link href="{{asset('plugins/charts-c3/c3-chart.css')}}" rel="stylesheet" /> -->
 
     <!-- CUSTOM SCROLL BAR CSS-->
     <link href="{{asset('plugins/p-scroll/perfect-scrollbar.css')}}" rel="stylesheet" />
 
     <!-- SELECT2 CSS -->
     <link href="{{asset('plugins/select2/select2.min.css')}}" rel="stylesheet" />
-
+    <!-- Dymanic style -->
+    @yield('content-style')
     <!--- FONT-ICONS CSS -->
     <link href="{{asset('plugins/icons/icons.css')}}" rel="stylesheet" />
 
@@ -49,6 +50,7 @@
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{asset('colors/color1.css')}}" />
+   
 </head>
 
 <body class="app sidebar-mini Left-menu-Default Sidemenu-left-icons">
@@ -395,7 +397,7 @@
         <script src="{{asset('plugins/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 
         <!-- CHART-CIRCLE JS-->
-        <script src="{{asset('plugins/circle-progress/circle-progress.min.js')}}"></script>
+        <!-- <script src="{{asset('plugins/circle-progress/circle-progress.min.js')}}"></script> -->
 
         <!-- RATING STARJS -->
         <script src="{{asset('plugins/rating/jquery.rating-stars.js')}}"></script>
@@ -417,6 +419,8 @@
         <!-- Moment js-->
         <script src="{{asset('plugins/moment/moment.min.js')}}"></script>
 
+        <!-- Js dymanic -->
+        @yield('content-js')
         <!-- FLOT CHART JS -->
         <script src="{{asset('plugins/jquery.flot/jquery.flot.js')}}"></script>
         <script src="{{asset('plugins/jquery.flot/jquery.flot.pie.js')}}"></script>
@@ -424,22 +428,22 @@
         <script src="{{asset('js/chart.flot.sampledata.js')}}"></script>
 
         <!-- PIETY CHART JS-->
-        <script src="{{asset('plugins/peitychart/jquery.peity.min.js')}}"></script>
-        <script src="{{asset('plugins/peitychart/peitychart.init.js')}}"></script>
+        <!-- <script src="{{asset('plugins/peitychart/jquery.peity.min.js')}}"></script>
+        <script src="{{asset('plugins/peitychart/peitychart.init.js')}}"></script> -->
 
         <!-- ECHART JS-->
-        <script src="{{asset('plugins/echarts/echarts.js')}}"></script>
+        <!-- <script src="{{asset('plugins/echarts/echarts.js')}}"></script> -->
 
         <!-- CHARTJS CHART JS-->
-        <script src="{{asset('plugins/chart/Chart.bundle.js')}}"></script>
-        <script src="{{asset('plugins/chart/utils.js')}}"></script>
+        <!-- <script src="{{asset('plugins/chart/Chart.bundle.js')}}"></script>
+        <script src="{{asset('plugins/chart/utils.js')}}"></script> -->
 
         <!-- DATEPICKER JS -->
         <script src="{{asset('plugins/date-picker/spectrum.js')}}"></script>
         <script src="{{asset('plugins/date-picker/jquery-ui.js')}}"></script>
 
         <!-- APEXCHART JS -->
-        <script src="{{asset('js/apexcharts.js')}}"></script>
+        <!-- <script src="{{asset('js/apexcharts.js')}}"></script> -->
 
         <!-- INDEX JS -->
         <script src="{{asset('js/index1.js')}}"></script>

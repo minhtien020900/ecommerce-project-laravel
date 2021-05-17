@@ -1,5 +1,8 @@
 <!-- PAGE-HEADER -->
 @extends('layouts.admin-layout')
+@section('content-style')
+<link href="{{asset('plugins/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
+@endsection
 @section('dashboard-content')
     <div class="page-header">
 							<ol class="breadcrumb"><!-- breadcrumb -->
@@ -40,8 +43,8 @@
 														<th class="wd-15p">Brand Name</th>
 														<th class="wd-10p">Desc</th>
 														<th class="wd-25p">Price</th>
-                                                        <th class="wd-25p">Image</th>
-                                                        <th class="wd-25p">Action</th>
+                                                        <th class="wd-15p">Image</th>
+                                                        <th class="wd-15p">Action</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -51,6 +54,8 @@
 														<td>System Developer</td>
 														<td>2018/03/12</td>
 														<td>$654,765</td>
+														<td>b.Chloe@datatables.net</td>
+														<td>b.Chloe@datatables.net</td>
 														<td>b.Chloe@datatables.net</td>
 													</tr>
 												</tbody>
@@ -64,4 +69,10 @@
 						</div>
 						<!-- ROW-1 CLOSED -->
 @endsection
-						
+@section('content-js')
+				<script src="{{asset('plugins/datatable/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('plugins/datatable/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('plugins/datatable/datatable.js')}}"></script>
+    <script src="{{asset('plugins/datatable/datatable-2.js')}}"></script>
+    <script src="{{asset('plugins/datatable/dataTables.responsive.min.js')}}"></script>
+@endsection
