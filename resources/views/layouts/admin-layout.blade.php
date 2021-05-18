@@ -50,6 +50,8 @@
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{asset('colors/color1.css')}}" />
+
+        @yield('custom-style')
    
 </head>
 
@@ -373,7 +375,12 @@
                 @include('pages.admin.mobile-header')
                 <!-- /Mobile Header -->
                 <!--app-content open-->
-                @yield('dashboard-content')
+                <div class="app-content">
+                    <div class="side-app">
+                       @yield('dashboard-content')
+                    </div>
+                </div>
+             
                 <!-- CONTAINER END -->
             </div>
 

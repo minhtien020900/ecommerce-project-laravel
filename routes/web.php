@@ -26,7 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', function () {
     return view('layouts.admin-layout');
 })->name('admin-dashboard');
-Route::resource('/product',ProductProductController::class);
+Route::resource('products',ProductProductController::class);
 Auth::routes();
 // Route::get('admin/list-product')
 

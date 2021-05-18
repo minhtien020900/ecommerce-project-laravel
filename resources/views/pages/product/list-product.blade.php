@@ -3,6 +3,36 @@
 @section('content-style')
 <link href="{{asset('plugins/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
 @endsection
+@section('custom-style')
+<style>
+	table td a {
+    font-weight: bold;
+    color: #566787;
+    display: inline-block;
+    text-decoration: none;
+    outline: none !important;
+    }
+				table td a:hover {
+    color: #2196F3;
+    }table td:last-child i {
+    opacity: 0.9;
+    margin: 0 5px;
+    }
+				table td:last-child{
+					display: flex;
+    align-items: center;
+				justify-content: center;
+				}
+td a.edit{
+	color: #FFC107;
+	}td a.delete{
+		color: #F44336;
+	}
+	table td i {
+    font-size: 20px;
+    }
+</style>
+@endsection
 @section('dashboard-content')
     <div class="page-header">
 							<ol class="breadcrumb"><!-- breadcrumb -->
@@ -55,8 +85,26 @@
 														<td>2018/03/12</td>
 														<td>$654,765</td>
 														<td>b.Chloe@datatables.net</td>
-														<td>b.Chloe@datatables.net</td>
-														<td>b.Chloe@datatables.net</td>
+														<td>
+															{{-- <img src="{{ asset('images/users/1.jpg') }}" alt=""> --}}
+															13123
+														</td>
+														<td>
+														<a 
+                                   href=""
+                                   class="edit"
+
+                                ><i
+                                        class="fe fe-edit-2"
+                                        title="Edit"></i></a>
+																																								<a 
+																																								href=""
+																																								class="delete"
+					
+																																					><i
+																																													class="fe fe-x"
+																																													title="Delete"></i></a>
+														</td>
 													</tr>
 												</tbody>
 											</table>
