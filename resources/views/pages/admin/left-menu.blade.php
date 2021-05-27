@@ -148,18 +148,18 @@
               ></a>
               <ul class="slide-menu">
                 <li>
-                  <a href="alerts.html" class="slide-item"
+                  <a href="{{route('admin.create-product')}}" class="slide-item"
                     ><i class="sidemenu-icon fe fe-chevrons-right"></i>
                     Thêm sản phẩm</a
                   >
                 </li>
                 <li>
-                  <a  class="slide-item" href="{{route('products.index')}}"
+                  <a  class="slide-item" href="{{route('admin.list-product')}}"
                     ><i class="sidemenu-icon fe fe-chevrons-right"></i>
                     Danh sách sản phẩm</a
                   >
                 </li>
-                
+
               </ul>
             </li>
              <li class="slide">
@@ -181,7 +181,7 @@
                     Danh sách thương hiệu</a
                   >
                 </li>
-                
+
               </ul>
             </li>
             <li><h3>Charts& Tables</h3></li>
@@ -207,8 +207,7 @@
                 <li>
                   <a href="chart-echart.html" class="slide-item"
                     ><i class="sidemenu-icon fe fe-chevrons-right"></i>
-                    ECharts</a
-                  >
+                    ECharts</a>
                 </li>
                 <li>
                   <a href="chart-morris.html" class="slide-item"

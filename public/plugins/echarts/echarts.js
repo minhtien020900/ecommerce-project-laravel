@@ -3119,7 +3119,7 @@ function parse(colorStr, rgbaArr) {
     }
 
     setRgba(rgbaArr, 0, 0, 0, 1);
-    return;
+
 }
 
 /**
@@ -15361,7 +15361,7 @@ var Rect = Path.extend({
             buildPath(ctx, shape);
         }
         ctx.closePath();
-        return;
+
     }
 });
 
@@ -17031,7 +17031,7 @@ Model.prototype = {
     },
 
     setReadOnly: function (properties) {
-        
+
     },
 
     // If path is null/undefined, return null/undefined.
@@ -43998,7 +43998,7 @@ var PointerPath = Path.extend({
             shape.y - mathSin(angle) * width
         );
         ctx.lineTo(x, y);
-        return;
+
     }
 });
 

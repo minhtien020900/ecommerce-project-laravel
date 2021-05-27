@@ -39,7 +39,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return Animation;
     }();
 
-    ;
+
 
     Animation.transitions = {
       "webkitTransition": "webkitTransitionEnd",
@@ -253,7 +253,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return Growl;
     }();
 
-    ;
+
 
     Growl.settings = {
       namespace: 'growl',

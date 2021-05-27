@@ -116,7 +116,7 @@
     var $this = $(event.target);
     var isButtonOrSidebar = $this.is('.sidebar, [data-toggle="sidebar-right"]') || $this.parents('.sidebar, [data-toggle="sidebar-right"]').length;
     if (isButtonOrSidebar) {
-      return;
+
     } else {
       var $target = $('.sidebar');
       $target.each(function(i, trgt) {

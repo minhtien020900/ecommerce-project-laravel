@@ -1,6 +1,4 @@
-<!-- PAGE-HEADER -->
 @extends('pages.common.table')
-
 @section('table-content')
     <!-- ROW-1 OPEN -->
     <div class="row">
@@ -63,4 +61,3 @@
     </div>
     <!-- ROW-1 CLOSED -->
 @endsection
-
