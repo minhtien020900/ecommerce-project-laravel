@@ -28,8 +28,8 @@
                             @foreach($productList as $key => $product)
                                 <tr>
                                     <td>{{$product->id}}</td><td>{{$product->product_name}}</td>
-                                    <td>{{$product->category_id}}</td>
-                                    <td>{{$product->brand_id}}</td>
+                                    <td>{{$product->category->category_name}}</td>
+                                    <td>{{$product->brand->brand_name}}</td>
                                     <td>{{$product->product_desc}}</td>
                                     <td>{{$product->product_price}}</td>
                                     <td>{{$product->product_image}}</td>

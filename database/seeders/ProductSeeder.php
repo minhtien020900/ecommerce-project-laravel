@@ -18,8 +18,8 @@ class ProductSeeder extends Seeder
         //
         for ($i = 0; $i <= 15; $i++) {
             DB::table('products')->insert([
-                'category_id' => $i,
-                'brand_id' => $i,
+                'category_id' => random_int(1,6),
+                'brand_id' => random_int(1,6),
                 'product_name' => 'Product '.$i,
                 'product_desc' => \Illuminate\Support\Str::random(20),
                 'product_price' => random_int(1,20),

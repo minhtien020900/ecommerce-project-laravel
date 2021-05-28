@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::group(['prefix' => 'product'], function () {
         Route::get('list-product', [ProductController::class, 'index'])->name('admin.list-product');
         Route::get('create', [ProductController::class, 'create'])->name('admin.create-product');
+        Route::post('add',[ProductController::class,'store'])->name('admin.store-product');
     });
 });
 

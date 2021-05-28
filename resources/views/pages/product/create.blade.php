@@ -5,64 +5,88 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="mb-0 card-title">Add Product</h3>
+                    <h3 class="mb-0 card-title">Thêm Sản phẩm</h3>
                 </div>
 
                 <div class="card-body">
-                    <form action="" enctype="multipart/form-data">
+                    <form action="{{route('admin.store-product')}}" enctype="multipart/form-data" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control is-valid state-valid" name="product_name"
-                                           placeholder="Enter Product Name" required>
+                                    <input type="text"
+                                           class="form-control @if($errors->has('product_name')) is-invalid state-invalid @elseif(old('product_name')) is-valid state-valid @endif"
+                                           name="product_name"
+                                           placeholder="Enter Product Name" value="{{old('product_name')}}">
+                                    @if($errors->has('product_name'))
+                                        <div class="invalid-feedback">{{$errors->first('product_name')}}</div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control is-valid state-valid" name="product_price"
-                                           placeholder="Enter Price" required>
+                                    <input type="text"
+                                           class="form-control @if($errors->has('product_price')) is-invalid state-invalid @elseif(old('product_price')) is-valid state-valid @endif"
+                                           name="product_price"
+                                           placeholder="Enter Price" value="{{old('product_price')}}">
+                                    @if($errors->has('product_price'))
+                                        <div class="invalid-feedback">{{$errors->first('product_price')}}</div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                              placeholder="Write a description ..."></textarea></div>
+                                    <textarea name="product_desc"
+                                              class="form-control @if($errors->has('product_desc')) is-invalid state-invalid @elseif(old('product_desc')) is-valid state-valid @endif"
+                                              id="exampleFormControlTextarea1"
+                                              rows="3"
+                                              placeholder="Write a description ...">{{old('product_desc')}}</textarea>
+                                    @if($errors->has('product_desc'))
+                                        <div class="invalid-feedback">{{$errors->first('product_desc')}}</div>
+                                    @endif
+                                </div>
+
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select name="category_id" id="select-countries"
-                                            class="form-control">
-                                        <option value="br">Brazil</option>
-                                        <option value="cz">Czech Republic</option>
-                                        <option value="de">Germany</option>
-                                        <option value="pl" selected="">Poland</option>
+                                    <select name="category_id"
+                                            class="form-control @if($errors->has('category_id')) is-invalid state-invalid @elseif(old('category_id')) is-valid state-valid @endif">
+                                        <option value="">-- Select Category --</option>
+                                        @foreach($listCate as $key => $cate)
+                                            <option value="{{$cate->id}}" @if($cate->id == old('category_id')) selected @endif>{{$cate->category_name}}</option>
+                                        @endforeach
+
                                     </select>
+
+                                    @if($errors->has('category_id'))
+                                        <div class="invalid-feedback">{{$errors->first('category_id')}}</div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control">
-                                        <option value="1">January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                    <select  name="brand_id" class="form-control @if($errors->has('brand_id')) is-invalid state-invalid @elseif(old('brand_id')) is-valid state-valid @endif">
+                                        <option value="" selected>--Select Brand--</option>
+                                        @foreach($listBrand as $key =>$brand)
+                                            <option value="{{$brand->id}}" @if($brand->id == old('brand_id')) selected @endif>{{$brand->brand_name}}</option>
+                                        @endforeach
                                     </select>
+                                    @if($errors->has('brand_id'))
+                                        <div class="invalid-feedback">{{$errors->first('brand_id')}}</div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <input multiple type="file"  class="form-control dropify" data-height="120"/>
+                                    <input name="product_image" multiple type="file" class="form-control dropify"
+                                           data-height="120"/>
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="btn-list text-center mt-2">
+
+                            <button type="submit" class="btn btn-success"><i class="fe fe-check mr-2"></i>Submit
+                            </button>
+
+                            <button type="reset" class="btn btn-danger"><i class="fe fe-refresh-cw mr-2"></i>Reset
+                            </button>
+
+                        </div>
                     </form>
-                </div>
-                <div class="btn-list text-center mb-4">
-
-                    <button type="button" class="btn btn-success"><i class="fe fe-check mr-2"></i>Submit</button>
-
-                    <button type="button" class="btn btn-danger"><i class="fe fe-refresh-cw mr-2"></i>Reset</button>
-
                 </div>
             </div>
 
