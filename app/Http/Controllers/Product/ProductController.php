@@ -36,8 +36,7 @@ class ProductController extends Controller
 
     public function store(FormProductRequest $request)
     {
-//        dd($request->file('images'));
-//
+
         $reflection = new \ReflectionClass(Product::class);
         $product = Product::create($request->all());
         foreach ($request->file('images') as $value) {

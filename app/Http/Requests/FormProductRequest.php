@@ -26,8 +26,8 @@ class FormProductRequest extends FormRequest
 
         return [
             //
-            'product_name' => 'bail|required',
-            'product_price' => 'bail|required|',
+            'product_name' => ['bail','required','string','unique:products,product_name,{$this->product->id}'],
+            'product_price' => 'bail|required|numeric',
             'category_id' => 'bail|required|nullable',
             'brand_id' => 'bail|required|nullable',
             'product_desc' => 'required',
