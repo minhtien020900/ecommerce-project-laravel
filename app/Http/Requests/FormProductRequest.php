@@ -23,14 +23,38 @@ class FormProductRequest extends FormRequest
      */
     public function rules()
     {
-//        dd($request->input('category_id'));
+
         return [
             //
-            'product_name'=>'bail|required',
-            'product_price'=>'bail|required|',
-            'category_id'=>'bail|required|nullable',
-            'brand_id'=>'bail|required|nullable',
-            'product_desc'=>'required'
+            'product_name' => 'bail|required',
+            'product_price' => 'bail|required|',
+            'category_id' => 'bail|required|nullable',
+            'brand_id' => 'bail|required|nullable',
+            'product_desc' => 'required',
+            'images' => 'mimes:jpeg,bmp,png'
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => ':attribute is required'];
+    }
+
+    public function attributes()
+    {
+        $attribute = $this->rules();
+
+        foreach ($attribute as $key => $rule) {
+            $arrField = preg_split("/_/", $key);
+            if (in_array('id', $arrField)) {
+                unset($arrField[array_search('id', $arrField)]);
+            }
+            $convertText = implode(' ', $arrField);
+            $attribute[$key] = ucfirst($convertText);
+
+        }
+        return $attribute;
+
     }
 }

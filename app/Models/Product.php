@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'category_id', 'brand_id', 'product_name', 'product_desc', 'product_price', 'product_image'];
+    protected $fillable = ['id', 'category_id', 'brand_id', 'product_name', 'product_desc', 'product_price', 'product_image','created_at','updated_at'];
 
     public function category()
     {
@@ -19,5 +19,8 @@ class Product extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+    public function image(){
+        return $this->morphMany(Image::class,'imageable');
     }
 }

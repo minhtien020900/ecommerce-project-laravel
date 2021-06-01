@@ -21,18 +21,23 @@
                                 <th class="wd-10p">Desc</th>
                                 <th class="wd-25p">Price</th>
                                 <th class="wd-15p">Image</th>
+                                <th class="wd-15p">Created at</th>
+                                <th class="wd-15p">Updated at</th>
                                 <th class="wd-15p">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($productList as $key => $product)
                                 <tr>
-                                    <td>{{$product->id}}</td><td>{{$product->product_name}}</td>
+                                    <td>{{$product->id}}</td>
+                                    <td>{{$product->product_name}}</td>
                                     <td>{{$product->category->category_name}}</td>
                                     <td>{{$product->brand->brand_name}}</td>
-                                    <td>{{$product->product_desc}}</td>
+                                    <td>{{\Illuminate\Support\Str::substr($product->product_desc,0,20) . ' ...'}}</td>
                                     <td>{{$product->product_price}}</td>
                                     <td>{{$product->product_image}}</td>
+                                    <td>{{$product->created_at}}</td>
+                                    <td>{{$product->updated_at}}</td>
                                     <td>
                                         <a
                                             href=""

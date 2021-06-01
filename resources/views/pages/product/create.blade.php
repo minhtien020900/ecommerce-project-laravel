@@ -9,6 +9,13 @@
                 </div>
 
                 <div class="card-body">
+
+                    @if(session()->has('message'))
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i> {{session('message')}}
+                        </div>
+                    @endif
                     <form action="{{route('admin.store-product')}}" enctype="multipart/form-data" method="post">
                         @csrf
                         <div class="row">
@@ -49,7 +56,8 @@
                                             class="form-control @if($errors->has('category_id')) is-invalid state-invalid @elseif(old('category_id')) is-valid state-valid @endif">
                                         <option value="">-- Select Category --</option>
                                         @foreach($listCate as $key => $cate)
-                                            <option value="{{$cate->id}}" @if($cate->id == old('category_id')) selected @endif>{{$cate->category_name}}</option>
+                                            <option value="{{$cate->id}}"
+                                                    @if($cate->id == old('category_id')) selected @endif>{{$cate->category_name}}</option>
                                         @endforeach
 
                                     </select>
@@ -59,20 +67,29 @@
                                     @endif
                                 </div>
                                 <div class="form-group">
-                                    <select  name="brand_id" class="form-control @if($errors->has('brand_id')) is-invalid state-invalid @elseif(old('brand_id')) is-valid state-valid @endif">
+                                    <select name="brand_id"
+                                            class="form-control @if($errors->has('brand_id')) is-invalid state-invalid @elseif(old('brand_id')) is-valid state-valid @endif">
                                         <option value="" selected>--Select Brand--</option>
                                         @foreach($listBrand as $key =>$brand)
-                                            <option value="{{$brand->id}}" @if($brand->id == old('brand_id')) selected @endif>{{$brand->brand_name}}</option>
+                                            <option value="{{$brand->id}}"
+                                                    @if($brand->id == old('brand_id')) selected @endif>{{$brand->brand_name}}</option>
                                         @endforeach
                                     </select>
-                                    @if($errors->has('brand_id'))
-                                        <div class="invalid-feedback">{{$errors->first('brand_id')}}</div>
-                                    @endif
+
+                                    @error('brand_id')
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                    @enderror
+
                                 </div>
                                 <div class="form-group">
-                                    <input name="product_image" multiple type="file" class="form-control dropify"
+                                    <input name="images[]" type="file" multiple
+                                           class="form-control @error('images') is-invalid state-invalid @enderror"
                                            data-height="120"/>
+                                    @error('images')
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                    @enderror
                                 </div>
+
                             </div>
                         </div>
 
