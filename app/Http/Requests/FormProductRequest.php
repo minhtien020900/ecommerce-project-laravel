@@ -31,7 +31,8 @@ class FormProductRequest extends FormRequest
             'category_id' => 'bail|required|nullable',
             'brand_id' => 'bail|required|nullable',
             'product_desc' => 'required',
-            'images' => 'mimes:jpeg,bmp,png'
+            'images' => 'required',
+            'images.*' => 'mimes:jpeg,jpg,png|max:2048'
         ];
     }
 
@@ -54,6 +55,7 @@ class FormProductRequest extends FormRequest
             $attribute[$key] = ucfirst($convertText);
 
         }
+        $attribute['images.*']='Image file';
         return $attribute;
 
     }

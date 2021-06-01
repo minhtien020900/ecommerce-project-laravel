@@ -82,14 +82,16 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input name="images[]" type="file" multiple
-                                           class="form-control @error('images') is-invalid state-invalid @enderror"
+                                    <input name="images[]" type="file" multiple="multiple"
+                                           class="form-control @if($errors->has('images') || $errors->has('images.*')) is-invalid state-invalid @endif"
                                            data-height="120"/>
                                     @error('images')
                                     <div class="invalid-feedback">{{$message}}</div>
                                     @enderror
+                                    @error('images.*')
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                    @enderror
                                 </div>
-
                             </div>
                         </div>
 
